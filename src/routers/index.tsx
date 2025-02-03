@@ -1,32 +1,32 @@
-// import { Home, Profile, SignIn, SignUp } from "@/pages";
+import React from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import MainLayout from "../layouts/MainLayout";
+import NewsMainPage from "../pages/News/NewsMainPage";
+import NotFound from "../pages/PageError/NotFound";
+import MainPage from "../pages/MainPage";
+import HomePage from "../pages/Home/HomePage";
 
-// export const routes = [
-//   {
-//     name: "home",
-//     path: "/home",
-//     element: <Home />,
-//   },
-//   {
-//     name: "profile",
-//     path: "/profile",
-//     element: <Profile />,
-//   },
-//   {
-//     name: "Sign In",
-//     path: "/sign-in",
-//     element: <SignIn />,
-//   },
-//   {
-//     name: "Sign Up",
-//     path: "/sign-up",
-//     element: <SignUp />,
-//   },
-//   {
-//     name: "Docs",
-//     href: "https://www.material-tailwind.com/docs/react/installation",
-//     target: "_blank",
-//     element: "",
-//   },
-// ];
+const RouteConfig: React.FC = () => {
+  const navigate = useNavigate();
 
-// export default routes;
+  const goToDashboard = () => {
+    navigate("/"); // Navigate programmatically to /dashboard
+  };
+
+  React.useEffect(() => {
+    // Example: Redirect to dashboard on load
+    goToDashboard();
+  }, []);
+
+  return (
+    <Routes>
+      <Route path="/" element={<MainPage />}>
+        <Route index element={<HomePage />} />
+        <Route path="news" element={<NewsMainPage />} />
+      </Route>
+      <Route path="*" element={<NotFound />} /> 
+    </Routes>
+  );
+};
+
+export default RouteConfig;

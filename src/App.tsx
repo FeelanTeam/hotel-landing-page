@@ -1,13 +1,13 @@
 import React from "react";
-import "./App.css";
-import MainLayout from "./layouts/MainLayout";
+import { BrowserRouter as Router } from "react-router-dom";
+import RouteConfig from "./routers";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div>
-     <MainLayout/>
-    </div>
+    <Router>
+      <RouteConfig />
+    </Router>
   );
-}
+};
 
 export default App;

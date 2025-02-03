@@ -1,12 +1,12 @@
 import React from "react";
 import { Layout, Menu, theme } from "antd";
-import HeaderLayout from "./HeaderLayout";
-import FooterLayout from "./FooterLayout";
-import ContentLayout from "./ContentLayout";
+import HeaderLayout from "../layouts/HeaderLayout";
+import FooterLayout from "../layouts/FooterLayout";
+import { Outlet } from "react-router-dom";
 
 const { Header, Content, Footer, Sider } = Layout;
 
-const MainLayout: React.FC = () => {
+const MainPage: React.FC = () => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
@@ -18,10 +18,11 @@ const MainLayout: React.FC = () => {
 
   return (
     <Layout style={bgPageStyle}>
+      <HeaderLayout />
       <Content>
         <Layout>
-          <Content style={bgPageStyle}>
-            <ContentLayout />
+          <Content style={bgPageStyle} className="lg-px-36 md:px-36 sm:px-8">
+            <Outlet />
           </Content>
         </Layout>
       </Content>
@@ -32,4 +33,4 @@ const MainLayout: React.FC = () => {
   );
 };
 
-export default MainLayout;
+export default MainPage;
