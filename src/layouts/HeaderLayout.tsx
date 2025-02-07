@@ -57,11 +57,11 @@ const Navbar = () => {
     <div>
       <div className="w-full h-[160px] lg:px-36 md:px-36 sm:px-8">
         <div className="max-w-[1480px] m-auto w-full h-full flex justify-between items-center">
-          <img
+          {/* <img
             className="h-[80px]"
             src="//webbox.imgix.net/images/ockqbqolqkwyigxj/93601bf2-37f2-4ea7-b947-5582fdccf4c3.png?auto=format,compress&amp;fit=crop&amp;h=112"
             alt="The Bal'e Villas 牛眠埔里"
-          />
+          /> */}
           <div>
             <div className="flex gap-4 justify-end items-end pb-4">
               <Button className="rounded-full bg-[#43434366] border-[#c8c8c866] text-white p-3 h-14 w-14 text-lg">
