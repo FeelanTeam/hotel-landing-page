@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "antd";
+import { Button, Image } from "antd";
 import {
   PhoneFilled,
   MenuOutlined,
@@ -8,6 +8,9 @@ import {
 } from "@ant-design/icons";
 import { NavLink } from "react-router-dom";
 import { Carousel } from "antd";
+import Home1 from "../assets/images/home1.jpg";
+import Home2 from "../assets/images/home2.jpg";
+import Home3 from "../assets/images/home3.jpg";
 
 // import type { MenuProps } from "antd";
 // import {
@@ -51,6 +54,12 @@ const routes = [
   { path: "*", label: "News" },
   { path: "*", label: "Restaurant" },
 ];
+
+// const carouselItems = [
+//   { background: Home1 },
+//   { background: Home2 },
+//   { background: Home3 },
+// ];
 
 const Navbar = () => {
   return (
@@ -96,11 +105,28 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <Carousel  autoplay dots={{ className: "custom-dots" }}>
-        <div className="carousel-slide slide1">Slide 1</div>
-        <div className="carousel-slide slide2">Slide 2</div>
-        <div className="carousel-slide slide3">Slide 3</div>
-      </Carousel>
+      <div className="carousel-container">
+        {/* Background Carousel */}
+        <Carousel autoplay className="carousel" speed={400}>
+          {/* {carouselItems.map((item, index) => (
+              <div
+                key={index}
+                className="carousel-slide"
+                style={{ backgroundImage: item.background }}
+              />
+          ))} */}
+
+          <Image className="carousel-slide" preview={false} src={Home1} />
+          <Image className="carousel-slide" preview={false} src={Home2} />
+          <Image className="carousel-slide" preview={false} src={Home3} />
+        </Carousel>
+
+        {/* Overlay Form */}
+        <div className="form-container">
+          <h2>Welcome To The Bal'e Villas</h2>
+          <h2>Come Stay With Us</h2>
+        </div>
+      </div>
     </div>
   );
 };

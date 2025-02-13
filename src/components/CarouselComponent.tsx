@@ -8,6 +8,7 @@ const contentStyle: React.CSSProperties = {
   width: "100%",
   textAlign: "center",
   padding: "5rem 4rem",
+  backgroundColor: "#c8c8c866",
 };
 const CarouselComponent: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const CarouselComponent: React.FC = () => {
         components: {
           Carousel: {
             arrowSize:50,
+            colorBgContainer: "#000000",
           },
         },
       }}

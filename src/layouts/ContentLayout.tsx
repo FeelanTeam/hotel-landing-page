@@ -1,6 +1,5 @@
 import React from "react";
 import { Divider } from "antd";
-import { Image, Row, Col } from "antd";
 import YoutubeEmbed from "../components/YoutubeEmbed";
 import CarouselComponent from "../components/CarouselComponent";
 

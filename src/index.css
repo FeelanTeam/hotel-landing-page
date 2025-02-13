@@ -49,37 +49,39 @@ a:hover {
   position: absolute;
 }
 
-/* Default Slide Styles */
+/* Full Page Layout */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Fullscreen */
+  overflow: hidden;
+}
+
+/* Background Carousel */
+.carousel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6) 
+}
+
 .carousel-slide {
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
 }
 
-/* Different background colors for slides */
-.slide1 { background: #ff4d4f; }
-.slide2 { background: #40a9ff; }
-.slide3 { background: #52c41a; }
-
-/* Custom Arrows */
-
-
-/* Left Arrow */
-.left-arrow {
-  left: 100px;
+/* Form Overlay */
+.form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent */
+  width:100%;
+  text-align: center;
 }
-
-/* Right Arrow */
-.right-arrow {
-  right: 100px;
-}
-
-
-
 
 /*
 body {
