@@ -3,6 +3,7 @@ import { Layout, Menu, theme } from "antd";
 import HeaderLayout from "../layouts/HeaderLayout";
 import FooterLayout from "../layouts/FooterLayout";
 import { Outlet } from "react-router-dom";
+import PageWrapper from "../components/PageWrapper";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -19,13 +20,15 @@ const MainPage: React.FC = () => {
   return (
     <Layout style={bgPageStyle}>
       <HeaderLayout />
-      <Content>
-        <Layout>
-          <Content style={bgPageStyle} className="lg-px-36 md:px-36 sm:px-8">
-            <Outlet />
-          </Content>
-        </Layout>
-      </Content>
+      <PageWrapper>
+        <Content>
+          <Layout>
+            <Content style={bgPageStyle}>
+              <Outlet />
+            </Content>
+          </Layout>
+        </Content>
+      </PageWrapper>
       <Footer className="bg-[#363636] p-0 m-0">
         <FooterLayout />
       </Footer>

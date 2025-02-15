@@ -2,6 +2,7 @@ import React from "react";
 import { Divider } from "antd";
 import YoutubeEmbed from "../components/YoutubeEmbed";
 import CarouselComponent from "../components/CarouselComponent";
+import { motion } from "framer-motion";
 
 const titleStyle: React.CSSProperties = {
   fontSize: "2rem",
@@ -17,6 +18,7 @@ const Content = () => {
       <div>
         
       </div>
+      <Divider style={{ borderColor: "gray" }} />
       <div className="py-10">
         <h3 style={titleStyle}>Videos</h3>
         <YoutubeEmbed embedId="uN3sOnn0tDw?si=og2MPoWU7e_YK6G_" />
@@ -30,7 +32,7 @@ const Content = () => {
       <div className="py-10">
         <h3 style={titleStyle}>News</h3>
       </div>
-      <Divider style={{ borderColor: "gray" }} />
+
     </div>
   );
 };

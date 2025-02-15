@@ -4,6 +4,7 @@ import HeaderLayout from "./HeaderLayout";
 import FooterLayout from "./FooterLayout";
 import ContentLayout from "./ContentLayout";
 
+
 const { Header, Content, Footer, Sider } = Layout;
 
 const MainLayout: React.FC = () => {
