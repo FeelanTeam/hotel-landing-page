@@ -40,3 +40,10 @@
 .read-the-docs {
   color: #888;
 } */
+
+
+@media (max-width: 768px) {
+  .carousel-container li button {
+    display: none !important;
+  }
+}

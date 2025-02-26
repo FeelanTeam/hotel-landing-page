@@ -1,10 +1,9 @@
 import React from 'react'
 import { Divider } from 'antd'
-
-const NewsMainPage = () => {
+const NewsPage = () => {
   return (
     <div>
-     <h1 className="text-5xl text-center font-extralight pb-10 pt-16">
+       <h1 className="text-5xl text-center font-extralight pb-10 pt-16">
         News
       </h1>
       <Divider style={{ borderColor: "LightGray" }} />
@@ -12,4 +11,4 @@ const NewsMainPage = () => {
   )
 }
 
-export default NewsMainPage
+export default NewsPage

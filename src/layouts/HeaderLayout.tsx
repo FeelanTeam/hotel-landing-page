@@ -7,10 +7,7 @@ import {
   RightOutlined,
 } from "@ant-design/icons";
 import { NavLink } from "react-router-dom";
-import { Carousel } from "antd";
-import Home1 from "../assets/images/home1.jpg";
-import Home2 from "../assets/images/home2.jpg";
-import Home3 from "../assets/images/home3.jpg";
+
 import { motion } from "framer-motion";
 
 // import type { MenuProps } from "antd";
@@ -49,18 +46,13 @@ import { motion } from "framer-motion";
 
 const routes = [
   { path: "/", label: "Home" },
-  { path: "*", label: "Terms and conditions" },
-  { path: "*", label: "Rooms" },
+  { path: "terms", label: "Terms and conditions" },
+  { path: "rooms", label: "Rooms" },
   { path: "news", label: "News" },
-  { path: "*", label: "News" },
-  { path: "*", label: "Restaurant" },
+  { path: "news-page", label: "News" },
+  { path: "restaurant", label: "Restaurant" },
 ];
 
-// const carouselItems = [
-//   { background: Home1 },
-//   { background: Home2 },
-//   { background: Home3 },
-// ];
 
 const Navbar = () => {
   return (
@@ -82,7 +74,10 @@ const Navbar = () => {
                 <Button className="rounded-full bg-[#43434366] border-[#c8c8c866] text-white p-3 h-14 w-14 text-lg">
                   <PhoneFilled />
                 </Button>
-                <Button className="rounded-full bg-[#e67c24] border-[#e67c24] text-white p-6 h-14 text-md font-semibold uppercase">
+                <Button
+                  className=" bg-[#e67c24] border-[#e67c24] text-white h-14 text-md font-medium uppercase"
+                  shape="round"
+                >
                   Book Now
                 </Button>
               </div>
@@ -109,28 +104,6 @@ const Navbar = () => {
                 </nav>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="carousel-container">
-          {/* Background Carousel */}
-          <Carousel autoplay className="carousel" speed={400}>
-            {/* {carouselItems.map((item, index) => (
-           <div
-             key={index}
-             className="carousel-slide"
-             style={{ backgroundImage: item.background }}
-           />
-       ))} */}
-
-            <Image className="carousel-slide" preview={false} src={Home1} />
-            <Image className="carousel-slide" preview={false} src={Home2} />
-            <Image className="carousel-slide" preview={false} src={Home3} />
-          </Carousel>
-
-          {/* Overlay Form */}
-          <div className="form-container">
-            <h2>Welcome To The Bal'e Villas</h2>
-            <h2>Come Stay With Us</h2>
           </div>
         </div>
       </div>
