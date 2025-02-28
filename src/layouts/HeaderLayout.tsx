@@ -1,14 +1,54 @@
 import React from "react";
 import { Button, Image } from "antd";
-import {
-  PhoneFilled,
-  MenuOutlined,
-  LeftOutlined,
-  RightOutlined,
-} from "@ant-design/icons";
+import { PhoneFilled, MenuOutlined } from "@ant-design/icons";
 import { NavLink } from "react-router-dom";
-
 import { motion } from "framer-motion";
+import type { MenuProps } from "antd";
+import { Dropdown, Space, ConfigProvider } from "antd";
+import { Link } from "react-router-dom";
+
+const items: MenuProps["items"] = [
+  {
+    key: "1",
+    label: (
+      <Link className="uppercase" to="exclusive-corporate-discounts">
+        exclusive corporate discounts
+      </Link>
+    ),
+  },
+  {
+    key: "2",
+    label: (
+      <Link className="uppercase" to="wedding-photography">
+        wedding photography
+      </Link>
+    ),
+  },
+  {
+    key: "3",
+    label: (
+      <Link className="uppercase" to="facilities-and-services">
+        Facilities & Services
+      </Link>
+    ),
+  },
+  {
+    key: "4",
+    label: (
+      <Link className="uppercase " to="transport">
+        Transport
+      </Link>
+    ),
+  },
+  {
+    key: "5",
+    label: (
+      <Link className="uppercase" to="contact">
+        Contact US
+      </Link>
+    ),
+  },
+];
 
 // import type { MenuProps } from "antd";
 // import {
@@ -46,13 +86,12 @@ import { motion } from "framer-motion";
 
 const routes = [
   { path: "/", label: "Home" },
-  { path: "terms", label: "Terms and conditions" },
+  { path: "terms-and-conditions", label: "Terms and conditions" },
   { path: "rooms", label: "Rooms" },
   { path: "news", label: "News" },
-  { path: "news-page", label: "News" },
+  { path: "promotions", label: "News" },
   { path: "restaurant", label: "Restaurant" },
 ];
-
 
 const Navbar = () => {
   return (
@@ -98,9 +137,33 @@ const Navbar = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button className="text-2xl m-0 p-0 " type="text">
-                    <MenuOutlined />
-                  </Button>
+                  <ConfigProvider
+                    theme={{
+                      components: {
+                        Dropdown: {
+                          paddingBlock: 15,
+                          colorPrimary: "--secondary-color",
+                          controlItemBgActive:"#ebedee",
+                          controlItemBgActiveHover:"--secondary-color"
+                        },
+                      },
+                    }}
+                  >
+                    <Dropdown
+                      menu={{
+                        items,
+                        selectable: true,
+                      }}
+                      trigger={["click"]}
+                      placement="bottomRight"
+                    >
+                      <a onClick={(e) => e.preventDefault()}>
+                        <Space className="text-xl">
+                          <MenuOutlined />
+                        </Space>
+                      </a>
+                    </Dropdown>
+                  </ConfigProvider>
                 </nav>
               </div>
             </div>
