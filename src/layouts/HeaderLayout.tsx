@@ -104,6 +104,7 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  
   return (
     <motion.div
       initial={{ y: -50, opacity: 0 }}
