@@ -79,19 +79,20 @@ const Content = () => {
         </motion.div>
 
         <PageWrapper>
-          <div className="py-10">
+          <div className="py-16">
             <h3 style={titleStyle}>Videos</h3>
             <YoutubeEmbed embedId="uN3sOnn0tDw?si=og2MPoWU7e_YK6G_" />
           </div>
           <Divider style={{ borderColor: "LightGray" }} />
-          <div className="py-10">
+          <div className="py-16">
             <h3 style={titleStyle}>Rooms</h3>
             <CarouselComponent />
           </div>
           <Divider style={{ borderColor: "LightGray" }} />
-          <div className="py-10">
+          <div className="py-16">
             <h3 style={titleStyle}>News</h3>
           </div>
+          <Divider style={{ borderColor: "LightGray" }} />
         </PageWrapper>
       </div>
     </ConfigProvider>

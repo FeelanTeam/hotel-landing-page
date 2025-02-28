@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Image } from "antd";
 import { PhoneFilled, MenuOutlined } from "@ant-design/icons";
 import { NavLink } from "react-router-dom";
@@ -94,6 +94,16 @@ const routes = [
 ];
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 133); // Change background after 50px
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <motion.div
       initial={{ y: -50, opacity: 0 }}
@@ -101,7 +111,11 @@ const Navbar = () => {
       transition={{ duration: 1 }}
     >
       <div>
-        <div className="w-full h-[160px] lg:px-36 md:px-36 sm:px-8">
+        <div
+          className={`top-0 z-50 w-full h-[133px] lg:px-36 md:px-36 sm:px-8 transition-all  duration-300 ${
+            isScrolled ? "bg-white shadow-lg fixed" : "bg-transparent"
+          }`}
+        >
           <div className="max-w-[1480px] m-auto w-full h-full flex justify-between items-center">
             <img
               className="h-[80px]"
@@ -143,8 +157,9 @@ const Navbar = () => {
                         Dropdown: {
                           paddingBlock: 15,
                           colorPrimary: "--secondary-color",
-                          controlItemBgActive:"#ebedee",
-                          controlItemBgActiveHover:"--secondary-color"
+                          // controlItemBgActive:"#ebedee",
+                          controlItemBgActive: "--secondary-color",
+                          controlItemBgActiveHover: "--secondary-color",
                         },
                       },
                     }}
